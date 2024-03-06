@@ -1,5 +1,36 @@
+FC = "รีเซ็ท";
+Title = "PHANToM Stat";
+Message = "งานที่กดรับทั้งหมด - {global_all}\nงานที่ได้รับ - {global_get}\nงานที่หลุด - {global_miss}\n\nเปอร์เซ็นการได้งาน {global_getp}%";
 
-SN = "เปิดใช้งาน⚡";
-Title = "OPEN SEND NUMBER";
-Message = " - {global_all}\nSwitchพร้อมใช้งาน";
-{IP = "⚡" ; SF="ปิดการใช้งาน💨"}
+global_all = global_miss + global_get;
+if(global_all == 0){global_getp = 0}
+else if(global_all != 0){
+global_getp = (global_get*100)/global_all;};
+if(global_getp >= 80){IC = "🐲";TC ="ปรมจารย์ปาดทุกสำนัก"}
+else if(global_getp <80 and global_getp >= 60)
+{IC = "🦚";TC ="นักปาดมือทอง"}
+else if(global_getp <60 and global_getp >= 40)
+{IC = "🦮";TC ="นักปาดฝึกหัด"}
+else if(global_getp <40 and global_getp >= 20)
+{IC = "🐔";TC ="ของกาก อย่าปากเก่ง"}
+else if(global_getp <20 and global_getp >= 0)
+{IC = "🐣";TC ="ยังโดนปาดไม่พออีกหรอ?"};
+if(global_all == 0){IC = "😐" ; TC="เอาการเอางานมั่งสิ"}
+FC = "รีเซ็ท";
+Title = "PHANToM Stat";
+Message = "งานที่กดรับทั้งหมด - {global_all}\nงานที่ได้รับ - {global_get}\nงานที่หลุด - {global_miss}\n\nเปอร์เซ็นการได้งาน {global_getp}%";
+
+global_all = global_miss + global_get;
+if(global_all == 0){global_getp = 0}
+else if(global_all != 0){
+global_getp = (global_get*100)/global_all;};
+if(global_getp >= 80){IC = "🐲";TC ="ปรมจารย์ปาดทุกสำนัก"}
+else if(global_getp <80 and global_getp >= 60)
+{IC = "🦚";TC ="นักปาดมือทอง"}
+else if(global_getp <60 and global_getp >= 40)
+{IC = "🦮";TC ="นักปาดฝึกหัด"}
+else if(global_getp <40 and global_getp >= 20)
+{IC = "🐔";TC ="ของกาก อย่าปากเก่ง"}
+else if(global_getp <20 and global_getp >= 0)
+{IC = "🐣";TC ="ยังโดนปาดไม่พออีกหรอ?"};
+if(global_all == 0){IC = "😐" ; TC="เอาการเอางานมั่งสิ"}
